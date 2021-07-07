@@ -1,0 +1,29 @@
+package arrays_task1;
+
+public class MaxRepeatedElement {
+	public void MaxRepeatingElement(int[] arrA) {
+		int size=arrA.length;
+		int maxCount=0;
+		int maxIndex=0;
+		for(int i=0;i<size;i++)
+		{
+			int index=arrA[i]% size;
+			arrA[index]=arrA[i] + size;
+		}
+		for(int i=0;i<size;i++) {
+			if(arrA[i]/size>maxCount) {
+				maxCount=arrA[i]/size;
+				maxIndex=i;
+			}
+		}
+		System.out.println("elememt repeating maximum no of times:"+maxIndex+",maximum count:"+maxCount);
+	}
+	public static void main(String[] args) {
+		int[] arrA= {4,1,5,2,1,5,9,8,3};
+		MaxRepeatedElement m= new MaxRepeatedElement();
+		m.MaxRepeatingElement(arrA);
+		
+		
+	}
+
+}
